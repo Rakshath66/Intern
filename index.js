@@ -48,9 +48,10 @@ const schedule = require('node-schedule');
 const {taskPrioritySchedule} = require('./controllers/cronJobs/taskPrioritySchedule');
 const {voiceCallToUser}  = require('./controllers/cronJobs/voiceCallToUser');
 
-//                                  Schedule Cron Jobs
-schedule.scheduleJob('*/40 * * * *', taskPrioritySchedule);   // Cron job for changing task priority based on due_date
-schedule.scheduleJob('*/40 * * * *', voiceCallToUser);        // Cron job for voice calling using Twilio if a task passes its due_date
+//                                  Schedule Cron Jobs, 
+//                     schedule call each hour (after 59 minutes)
+schedule.scheduleJob('*/59 * * * *', taskPrioritySchedule);   // Cron job for changing task priority based on due_date
+schedule.scheduleJob('*/59 * * * *', voiceCallToUser);        // Cron job for voice calling using Twilio if a task passes its due_date
 
 
 // Start server
