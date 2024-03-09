@@ -1,4 +1,4 @@
-# OpeninApp Assignment
+# OpeninApp Intern
 
 ## Overview
 
